@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>What did they mean?</title>
+</head>
+<body>  
+    <h1>What Did They Mean By This?</h1>
+    <form action="http://localhost:3001/quotes" method="POST">
+        <select name="createQuote">
+        </select>
+        <input type="text" name="quote-maker">
+        <input type="submit" value="Add a Quote" id="quote-submit">
+    </form>
+    <h2>Create a Quoter</h2>
+    <form action="http://localhost:3001/speaker" method="POST">
+        <input type="text" name="speaker-maker" id="">
+        <input type="submit" value="Create Speaker">
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
