@@ -7,7 +7,7 @@ class SpeakersController < ApplicationController
 
     def show
         @speaker = Speaker.find(params[:id])
-        render json: @speaker
+        render json: @speaker, include: :quotes
     end
 
     def create
