@@ -10,4 +10,11 @@ class SpeakersController < ApplicationController
         render json: @speaker
     end
 
+    def create
+        @speaker = Speaker.create(
+            name: params[:name]
+        )
+        redirect_to "http://localhost:3000/"
+    end
+
 end

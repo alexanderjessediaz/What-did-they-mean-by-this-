@@ -9,4 +9,12 @@ class QuotesController < ApplicationController
         @quote = Quote.find(params[:id])
         render json: @quote
     end
+
+    def create
+        @quote = Quote.create(
+            text: params[:text],
+            speaker_id: params[:speaker]
+        )
+    end
+
 end
