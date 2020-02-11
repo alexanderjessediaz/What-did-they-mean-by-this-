@@ -7,19 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <title>What did they mean?</title>
 </head>
-<body>  
-    <h1>What Did They Mean By This?</h1>
-    <form action="http://localhost:3001/quotes" method="POST">
+<body> 
+    <header>
+
+        <h1>What Did They Mean By This?</h1>
+        <h2>Find the true meaning of any quote!</h2>
+        <nav>
+            <ul>
+                <li><a href="speakers-index.html">Speakers</a></li>
+                <li><a href="quote-index.html">Quotes</a></li>
+            </ul>
+        </nav>
+    </header> 
+    
+    <div id="mid_content">
+        <p>
+            Irure enim veniam ullamco non. Dolor ipsum dolore laborum nostrud occaecat laboris do velit ut veniam exercitation proident qui. 
+            Aliqua consequat ipsum irure tempor aliqua consectetur. Irure nisi quis ullamco sunt exercitation ex nostrud occaecat ad. 
+            Sunt aliquip duis eu consequat ut aliquip culpa excepteur tempor minim cillum. Do voluptate eu ea ut. Laboris nostrud pariatur adipisicing labore. 
+            Aliqua tempor fugiat officia nostrud nisi reprehenderit enim enim duis anim cupidatat veniam. 
+            Nulla elit officia eiusmod commodo eiusmod excepteur adipisicing sit non officia mollit.
+        </p>
+        <img src="http://www.typeoff.de/wp-images/dan_news/typo-berlin-2008-img-dot.gif" alt="shit">
+    <p>
+        Irure enim veniam ullamco non. Dolor ipsum dolore laborum nostrud occaecat laboris do velit ut veniam exercitation proident qui. 
+        Aliqua consequat ipsum irure tempor aliqua consectetur. Irure nisi quis ullamco sunt exercitation ex nostrud occaecat ad. 
+        Sunt aliquip duis eu consequat ut aliquip culpa excepteur tempor minim cillum. Do voluptate eu ea ut. Laboris nostrud pariatur adipisicing labore. 
+        Aliqua tempor fugiat officia nostrud nisi reprehenderit enim enim duis anim cupidatat veniam. 
+        Nulla elit officia eiusmod commodo eiusmod excepteur adipisicing sit non officia mollit.
+    </p>
+    </div>  
+
+    <div id="form_content">
+    <form id="create-quote" action="http://localhost:3001/quotes" method="POST">
+        <h2>WDTM?</h2>
         <select name="createQuote">
         </select>
         <input type="text" name="quote-maker">
         <input type="submit" value="Add a Quote" id="quote-submit">
     </form>
-    <h2>Create a Quoter</h2>
-    <form action="http://localhost:3001/speakers" method="POST">
+
+    <form id="create-speaker" action="http://localhost:3001/speakers" method="POST">
+        <h2>Create a Quoter</h2>
         <input type="text" name="name" value="" placeholder="speaker name">
         <input type="submit" value="Create Speaker">
     </form>
+    </div>
 
     <script src="app.js"></script>
 </body>
