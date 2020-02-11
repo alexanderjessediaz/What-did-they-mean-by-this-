@@ -14,11 +14,11 @@ fetch(speakerUrl)
             
             option.value = speaker.id
             option.innerText = speaker.name
-            h2.innerHTML = `<a href='speaker-show.html?id=${speaker.id}'>${speaker.name}</a>`
+            // h2.innerHTML = `<a href='speaker-show.html?id=${speaker.id}'>${speaker.name}</a>`
 
             select.append(option)
 
-            document.body.appendChild(h2)
+            // document.body.appendChild(h2)
         })
     })
 
