@@ -50,30 +50,29 @@ li a:hover {
 background-color: #111;
 }
 #create-quote {
+    display: flex;
+    flex-direction: column;
     width: 30rem;
     background: #999;
     border-radius: 25px;
     box-shadow: black;
 }
 #create-quote > * {
-    display: block;
     height: 2rem;
     width: auto;
-    margin: auto;
 }
 #create-quote, h2 {
     text-align: center;
 }
 #create-speaker {
+    display: flex;
+    flex-direction: column;
     width: 30rem;
     background: #999;
     border-radius: 25px;
     box-shadow: black;
 }
-#create-speaker > * {
-    background-color: cadetblue;
-    display: block;
-}
+
 #form_content {
     display: flex;
     justify-content: space-around;
