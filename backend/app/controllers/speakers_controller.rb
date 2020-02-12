@@ -2,7 +2,7 @@ class SpeakersController < ApplicationController
 
     def index
         @speakers = Speaker.all 
-        render json: @speakers
+        render json: @speakers, include: :quotes
     end
 
     def show
