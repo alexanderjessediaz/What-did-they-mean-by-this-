@@ -5,6 +5,7 @@ const quotesUrl = `http://localhost:3001/quotes/${query}`
 
 fetch(quotesUrl)
     .then(response => response.json())
+    .then(console.log)
     .then(quoteResponse => {
         const headText = document.createElement('h1')
         const quoteText = document.createElement('h1')

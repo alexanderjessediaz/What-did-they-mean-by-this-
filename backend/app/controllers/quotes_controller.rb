@@ -19,8 +19,16 @@ class QuotesController < ApplicationController
     def create
         @quote = Quote.create(
             text: params[:text],
-            speaker_id: params[:speaker]
+            speaker_id: params[:speaker_id]
         )
+        redirect_to "http://localhost:3000/"
     end
+
+    def destroy
+        @quote = Quote.find(params[:id])
+        @quote.destroy
+        redirect_to "http://localhost:3000/quote-index.html"
+    end
+    
 
 end
