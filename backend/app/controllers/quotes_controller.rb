@@ -3,7 +3,7 @@ class QuotesController < ApplicationController
 
     def index
         @quotes = Quote.all 
-        render json: @quotes
+        render json: @quotes, include: :speaker
     end
 
     def show
