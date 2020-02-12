@@ -1,7 +1,12 @@
 @import url(‘https://fonts.googleapis.com/css?family=Roboto&display=swap’);
 body {
     font-family: ‘Roboto’, sans-serif;
+    background-image: url("https://www.scribendi.com/images/cms/thumbnails/Quotation%20Marks_720x370.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -12,16 +17,16 @@ h1 {
 }
 img {
     height: 343px;
-    width: 343px;
+    
 }
 #mid_content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 #mid_content, p {
     margin: auto;
     font-size: 1.3rem;
-    width: 100rem;
+    width: 75rem;
     padding: 1rem 5rem 1rem 5rem;
 }
 ul {
