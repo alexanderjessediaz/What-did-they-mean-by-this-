@@ -3,6 +3,7 @@ const query = searchParams.get('id')
 const speakerUrl = `http://localhost:3001/speakers/${query}`
 const speakerCard = document.querySelector(".speaker-card")
 
+
 fetch(speakerUrl)
     .then(response => response.json())
     .then(speaker => {
