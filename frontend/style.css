@@ -77,6 +77,7 @@ background-color: #111;
     background: #999;
     border-radius: 25px;
     box-shadow: black;
+    margin-left: 3rem;
 }
 
 #create-quote > * {
@@ -95,9 +96,10 @@ background-color: #111;
     background: #999;
     border-radius: 25px;
     box-shadow: black;
+    margin-right: 3rem;
 }
 
 #form_content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
