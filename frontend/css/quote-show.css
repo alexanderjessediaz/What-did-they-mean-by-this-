@@ -1,0 +1,76 @@
+@import url(‘https://fonts.googleapis.com/css?family=Roboto&display=swap’);
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap');
+
+body {
+    font-family: ‘Roboto’, sans-serif;
+    background-image: url("https://www.scribendi.com/images/cms/thumbnails/Quotation%20Marks_720x370.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #8834bd;
+    border-radius: 0px 0px 30px 30px;
+}
+h1 {
+    padding-left: 1rem;
+    color: #6cc8a1;
+    font-family: 'Coda Caption', sans-serif;
+
+}
+img {
+    height: 343px;
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+border-radius: 20px;
+border-style: solid;
+border-color: #6cc8a1;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: block;
+color: #6cc8a1;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover {
+background-color: #111;
+}
+
+#loader {
+    border: 16px solid #8834bd; /* Light grey */
+    border-top: 16px solid #6cc8a1; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 120px;
+}
+
+  
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
