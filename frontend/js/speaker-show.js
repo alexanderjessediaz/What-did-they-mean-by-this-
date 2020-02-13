@@ -1,16 +1,13 @@
 const searchParams = new URLSearchParams(document.location.search)
 const query = searchParams.get('id')
 const speakerUrl = `http://localhost:3001/speakers/${query}`
+const mainHead = document.querySelector('h1')
 
 fetch(speakerUrl)
     .then(response => response.json())
     .then(speaker => {
-        const speakerName = document.createElement('h1')
-        
-        console.log(speaker)
-        speakerName.innerText = speaker.name 
 
-        document.body.append(speakerName)
+        mainHead.innerText = speaker.name 
 
         speaker.quotes.map(quote => {
             const speakerQuote = document.createElement('p')
