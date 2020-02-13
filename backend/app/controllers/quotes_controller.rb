@@ -24,6 +24,12 @@ class QuotesController < ApplicationController
         redirect_to "http://localhost:3000/"
     end
 
+    def update
+        @quote = Quote.find(parasms[:id])
+        @quope.update(text: "text", quote: @quote)
+        redirect_to "http://localhost:3000/quote-index.html"
+    end
+
     def destroy
         @quote = Quote.find(params[:id])
         @quote.destroy
