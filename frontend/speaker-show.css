@@ -3,10 +3,13 @@
 
 body {
     font-family: ‘Roboto’, sans-serif;
-    background-color: #6cc8a1;
+    background-image: url("https://www.scribendi.com/images/cms/thumbnails/Quotation%20Marks_720x370.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
+
 
 header {
     display: flex;
