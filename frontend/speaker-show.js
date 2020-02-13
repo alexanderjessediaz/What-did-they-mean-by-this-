@@ -39,6 +39,7 @@ fetch(speakerUrl)
                 <input type="hidden" name="_method" value="put">
                 </form>`
 
+
                 //update goes here instead of being redirected to the quote index page http://localhost:3001/quotes/4?text=hkjnk
 
             speakerCard.append(speakerQuote, updateQuote, deleteQuote, WDTMlinkableSpeakerPrompt,WDTMlinkableSpeakerQuote)
