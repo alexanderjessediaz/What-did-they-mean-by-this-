@@ -8,11 +8,8 @@ fetch("http://localhost:3001/quotes")
 
             quoteSpeaker = `${quote.speaker.name}:`
             quoteText.innerText = `"${quote.text}"`
-
-
+            
             quoteList.append(quoteSpeaker,quoteText)
-            
-            
             
             })
 

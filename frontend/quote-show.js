@@ -1,11 +1,11 @@
 const searchParams = new URLSearchParams(document.location.search)
 const query = searchParams.get('id')
 const quotesUrl = `http://localhost:3001/quotes/${query}`
+const quoteContainer = document.querySelector(".quote-container")
     
 
 fetch(quotesUrl)
     .then(response => response.json())
-    .then(console.log)
     .then(quoteResponse => {
         const headText = document.createElement('h1')
         const quoteText = document.createElement('h1')
@@ -17,8 +17,6 @@ fetch(quotesUrl)
         quoteText.innerText = `"${quoteResponse.quote.text}"`
         apiText.innerText = quoteResponse.api_text.output
 
-        document.body.appendChild(headText)
-        document.body.appendChild(quoteText)
-        document.body.appendChild(apiText)
+        quoteContainer.append(headText,quoteText,apiText)
 
     })
