@@ -1,8 +1,6 @@
 const searchParams = new URLSearchParams(document.location.search)
 const query = searchParams.get('id')
 const speakerUrl = `http://localhost:3001/speakers/${query}`
-const updateCard = document.querySelector(".update-card")
-const deleteCard = document.querySelector(".delete-card")
 const speakerCard = document.querySelector(".speaker-card")
 
 fetch(speakerUrl)
@@ -11,41 +9,40 @@ fetch(speakerUrl)
         const speakerName = document.createElement('h1')
         const speakerPrompt = document.createElement("p")
         
-        console.log(speaker)
         speakerName.innerText = speaker.name 
         speakerPrompt.innerText = "Edit or update this speaker's quotes"
 
         speakerCard.append(speakerName, speakerPrompt)
 
         speaker.quotes.map(quote => {
+            console.log(quote)
             const deleteQuote = document.createElement("h2")
-            const updateQuote = document.createElement("div")
-            const updateQuoteText = document.createElement("p")
-            // I think a cleanish way to display all of our quotes on this
+            const WDTMlinkableSpeakerQuote = document.createElement("p")
+            const updateQuote = document.createElement("article")
+            const speakerQuote = document.createElement("p")
+            const WDTMlinkableSpeakerPrompt = document.createElement("p")
+          
+
+            WDTMlinkableSpeakerPrompt.textContent = "What did they mean when they said:"
+            WDTMlinkableSpeakerQuote.innerHTML = `<a href='quote-show.html?id=${quote.id}'>"${quote.text}"</a>` 
+            speakerQuote.textContent = `Speaker's Quote:"${quote.text}"`
 
             deleteQuote.innerHTML =  `<a href='quote-show.html?id=${quote.id}'>${quote.text}</a> 
-            <form method="POST" action="http://localhost:3001/quotes/${quote.id}">
-            <input type="submit" value="Delete this quote"/>
-            <input type="hidden" name="_method" value="delete">
-            </form>`
+                <form method="POST" action="http://localhost:3001/quotes/${quote.id}">
+                <input type="submit" value="Delete this quote"/>
+                <input type="hidden" name="_method" value="delete">
+                </form>`
 
-            updateQuote.innerHTML =  `<form method="POST" action="http://localhost:3001/quotes/${quote.id}">
-            <input type="text" placeholder="update this quote"/>
-            <input type="submit" value="Update"/>
-            <input type="hidden" name="_method" value="update">
-            </form>`
-            updateQuoteText.textContent = quote.text 
-            // maybe this could be colored differently? We can do something similar to the home page where both the update and delete are seperated on each side of the page.
+            updateQuote.innerHTML = `<form method="POST" action="http://localhost:3001/quotes/${quote.id}">
+                <textarea name="text" rows="8" cols="50"></textarea>
+                <input type="submit" value="Update this speaker's quote">
+                <input type="hidden" name="_method" value="put">
+                </form>`
+
+                //update goes here instead of being redirected to the quote index page http://localhost:3001/quotes/4?text=hkjnk
+
+            speakerCard.append(speakerQuote, updateQuote, deleteQuote, WDTMlinkableSpeakerPrompt,WDTMlinkableSpeakerQuote)
             
-           
-
-            updateCard.append(updateQuote, updateQuoteText)
-            deleteCard.append(deleteQuote)
-            const speakerQuote = document.createElement('p')
-
-            speakerQuote.innerHTML = `<a href='quote-show.html?id=${quote.id}'>${quote.text}</a>` 
-
-            document.body.append(speakerQuote)
         })
 
     })
