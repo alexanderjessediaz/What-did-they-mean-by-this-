@@ -14,7 +14,7 @@ fetch(quotesUrl)
 
         const alteredText = quoteResponse.api_text.output
 
-
+        
         // headText.innerText = `This is what ${quoteResponse.quote.speaker.name} could have meant when they said:`
         // quoteText.innerText = `"${quoteResponse.quote.text}"`
         apiText.innerText = `${alteredText.slice(0, (alteredText.length/2))}....`
