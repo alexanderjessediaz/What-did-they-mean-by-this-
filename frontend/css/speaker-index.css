@@ -10,7 +10,6 @@ body {
     padding: 0;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
@@ -58,4 +57,77 @@ text-decoration: none;
 
 li a:hover {
 background-color: #111;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    background-color: #8834bd;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    align-items: center;
+    width: 18rem;
+    height: 7rem;
+    box-shadow: 3px 3px 4px orange;
+    transition-duration: .5;
+}
+
+.card > * {
+    color: #6cc8a1;
+    padding: 0;
+    margin: 0;
+}
+
+
+.card:hover {
+    box-shadow: 5px 5px 4px orange;
+    width: 18.2rem;
+    height: 7.2rem;
+}
+
+.card > * {
+    color: #6cc8a1;
+    padding: 0;
+    margin: 0;
+}
+
+.card_title {
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition-duration: .2s;
+}
+
+.card_title:hover {
+    border-style: solid;
+    background-color: #111;
+    border-color: #6cc8a1;
+    padding: .1rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px orange;
+}
+
+.button {
+    border-style: solid;
+    border-color: #6cc8a1;
+    text-decoration: none;
+    padding: .4rem;
+    border-radius: 5px;
+    transition-duration: .2s;
+}
+
+.button:hover {
+
+    background-color: #111;
+    font-size: 2rem;
+    padding: .2rem;
+
+    box-shadow: 3px 3px 4px orange;
+    
 }
