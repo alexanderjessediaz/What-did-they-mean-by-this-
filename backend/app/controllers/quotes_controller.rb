@@ -68,7 +68,8 @@ class QuotesController < ApplicationController
     def update
         @quote = Quote.find(params[:id])
         @quote.update(text: params[:text])
-        redirect_to "http://localhost:3000/html/quote-index.html"
+        redirect_back fallback_location: @quote
+        # redirect_to "http://localhost:3000/html/quote-index.html"
     end
 
     def destroy
