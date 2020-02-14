@@ -1,50 +1,45 @@
 const searchParams = new URLSearchParams(document.location.search)
 const query = searchParams.get('id')
 const speakerUrl = `http://localhost:3001/speakers/${query}`
-const speakerCard = document.querySelector(".speaker-card")
+const speakerObject = document.querySelector("main")
 const title = document.querySelector("h1")
 
 
 fetch(speakerUrl)
     .then(response => response.json())
     .then(speaker => {
-        // const speakerName = document.createElement('h1')
-        const speakerPrompt = document.createElement("p")
-        
-        title.innerText = speaker.name 
-        speakerPrompt.innerText = "Edit or update this speaker's quotes"
 
-        speakerCard.append(speakerPrompt)
-
-        speaker.quotes.map(quote => {
-            const deleteQuote = document.createElement("h2")
-            const WDTMlinkableSpeakerQuote = document.createElement("p")
-            const updateQuote = document.createElement("article")
-            const speakerQuote = document.createElement("p")
-            const WDTMlinkableSpeakerPrompt = document.createElement("p")
-          
-
-            WDTMlinkableSpeakerPrompt.textContent = "What did they mean when they said:"
-            WDTMlinkableSpeakerQuote.innerHTML = `<a href='quote-show.html?id=${quote.id}'>"${quote.text}"</a>` 
-            speakerQuote.textContent = `Speaker's Quote:"${quote.text}"`
-
-            deleteQuote.innerHTML =  `<a href='quote-show.html?id=${quote.id}'>${quote.text}</a> 
-                <form method="POST" action="http://localhost:3001/quotes/${quote.id}">
-                <input type="submit" value="Delete this quote"/>
-                <input type="hidden" name="_method" value="delete">
-                </form>`
-
-            updateQuote.innerHTML = `<form method="POST" action="http://localhost:3001/quotes/${quote.id}">
-                <textarea name="text" rows="8" cols="50"></textarea>
-                <input type="submit" value="Update this speaker's quote">
-                <input type="hidden" name="_method" value="put">
-                </form>`
-
-
-                //update goes here instead of being redirected to the quote index page http://localhost:3001/quotes/4?text=hkjnk
-
-            speakerCard.append(speakerQuote, updateQuote, deleteQuote, WDTMlinkableSpeakerPrompt,WDTMlinkableSpeakerQuote)
+            title.innerText = `Edit or delete ${speaker.name}'s quotes!`
             
+        speaker.quotes.map(quote => {
+
+            const updateContainer = document.createElement("div")
+            const deleteQuote = document.createElement("h2")
+        
+            deleteQuote.innerHTML =  `
+                <div class="card delete">
+                    <p>Quote:"${quote.text}"</p>
+                    <p>Do you want to delete this?</p>
+                    <form method="POST" action="http://localhost:3001/quotes/${quote.id}">
+                        <input class="button" type="submit" value="Delete this quote"/>
+                        <input type="hidden" name="_method" value="delete">
+                    </form> 
+                </div>
+            `
+
+            updateContainer.innerHTML = `
+                <div class="card update">
+                    <h2>Quote:"${quote.text}"</h2>
+                    <form method="POST" action="http://localhost:3001/quotes/${quote.id}">
+                        <textarea name="text" rows="8" cols="42"></textarea>
+                        <input class="button" type="submit" value="Update this speaker's quote">
+                        <input type="hidden" name="_method" value="put">
+                    </form>
+                </div>
+            `
+
+            speakerObject.append(updateContainer, deleteQuote)
+         
         })
 
     })
