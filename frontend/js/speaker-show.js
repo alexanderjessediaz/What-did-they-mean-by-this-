@@ -2,21 +2,21 @@ const searchParams = new URLSearchParams(document.location.search)
 const query = searchParams.get('id')
 const speakerUrl = `http://localhost:3001/speakers/${query}`
 const speakerCard = document.querySelector(".speaker-card")
+const title = document.querySelector("h1")
 
 
 fetch(speakerUrl)
     .then(response => response.json())
     .then(speaker => {
-        const speakerName = document.createElement('h1')
+        // const speakerName = document.createElement('h1')
         const speakerPrompt = document.createElement("p")
         
-        speakerName.innerText = speaker.name 
+        title.innerText = speaker.name 
         speakerPrompt.innerText = "Edit or update this speaker's quotes"
 
-        speakerCard.append(speakerName, speakerPrompt)
+        speakerCard.append(speakerPrompt)
 
         speaker.quotes.map(quote => {
-            console.log(quote)
             const deleteQuote = document.createElement("h2")
             const WDTMlinkableSpeakerQuote = document.createElement("p")
             const updateQuote = document.createElement("article")
