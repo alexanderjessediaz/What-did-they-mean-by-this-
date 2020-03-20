@@ -2,7 +2,7 @@ const quoteUrl = "http://localhost:3001/quotes/"
 const speakerUrl = "http://localhost:3001/speakers/"
 
 select = document.querySelector('select')
-// quoteSubmit = document.querySelector('#quote-submit')
+
 
 fetch(speakerUrl)
     .then(response => response.json())

@@ -9,7 +9,7 @@ fetch(speakerUrl)
     .then(response => response.json())
     .then(speaker => {
 
-            title.innerText = `Edit or delete ${speaker.name}'s quotes!`
+        title.innerText = `Edit or delete ${speaker.name}'s quotes!`
             
         speaker.quotes.map(quote => {
 
